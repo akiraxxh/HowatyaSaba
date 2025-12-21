@@ -1,0 +1,380 @@
+/* Howatya Server Official Unified Stylesheet
+   Design: Linear, Sharp, No Rounded Corners, Dark Theme
+   Developer Note: Strictly no border-radius. No emojis.
+*/
+
+:root {
+    --primary-color: #00bfff;
+    --bg-dark: #0a0e14;
+    --bg-card: #141a21;
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+    --transition-speed: 0.3s;
+    --header-height: 70px;
+}
+
+/* --- Global Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Force disable all rounded corners across all elements */
+    border-radius: 0 !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-top: var(--header-height);
+}
+
+/* --- Loading Animation --- */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-bar {
+    width: 250px;
+    height: 2px;
+    background: #222;
+    position: relative;
+}
+
+.loader-bar::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: var(--primary-color);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { width: 0; left: 0; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0; left: 100%; }
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: rgba(10, 14, 20, 0.95);
+    border-bottom: 2px solid var(--primary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+/* Desktop Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color var(--transition-speed);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Mobile Menu Toggle --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2100;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    max-width: 100%;
+    margin-top: calc(var(--header-height) * -1);
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-color: #000;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(10, 14, 20, 0.4), rgba(10, 14, 20, 0.8));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+}
+
+.hero-title {
+    font-size: 4rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+}
+
+/* --- Common UI Layout --- */
+section {
+    padding: 80px 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    border-left: 8px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+/* --- Cards & Buttons --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid #222;
+    padding: 2rem;
+    transition: transform var(--transition-speed), border-color var(--transition-speed);
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.btn-discord, .btn-action {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+    transition: all var(--transition-speed);
+}
+
+.btn-discord:hover, .btn-action:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* --- News & Info Specific --- */
+.news-item {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.category-tag {
+    padding: 0.2rem 0.6rem;
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+/* --- Join Page (Tabs & Steps) --- */
+.tabs {
+    display: flex;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #333;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1.2rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-gray);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+
+.step-container {
+    margin-bottom: 6rem;
+}
+
+.step-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    opacity: 0.3;
+}
+
+.step-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border: 1px solid #333;
+    margin: 1.5rem 0;
+    display: block;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #05070a;
+    padding: 5rem 2rem;
+    border-top: 3px solid var(--primary-color);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--text-white);
+    margin-right: 1.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Mobile Queries --- */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+
+    nav {
+        position: fixed;
+        top: 0; right: -100%; width: 100%; height: 100vh;
+        background-color: var(--bg-dark);
+        transition: right 0.4s ease-in-out;
+        z-index: 1500;
+    }
+
+    nav.active { right: 0; }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    nav ul li { margin: 1.5rem 0; margin-left: 0; }
+    nav ul li a { font-size: 1.8rem; }
+
+    .menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    .hero-title { font-size: 2.5rem; }
+    .section-title { font-size: 1.8rem; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

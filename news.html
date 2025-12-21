@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お知らせ - ホワチャ鯖</title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .filter-container { margin-bottom: 2rem; display: flex; gap: 10px; flex-wrap: wrap; }
+        .filter-btn { 
+            padding: 0.5rem 1.5rem; border: 1px solid var(--primary-color); 
+            background: transparent; color: var(--text-white); cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary-color); color: var(--bg-dark); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">ホワチャ鯖</a>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="join.html">参加方法</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="rules.html">ルール</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">お知らせ一覧</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">すべて</button>
+            <button class="filter-btn" data-category="update">アップデート</button>
+            <button class="filter-btn" data-category="event">イベント</button>
+            <button class="filter-btn" data-category="maintenance">メンテナンス</button>
+        </div>
+
+        <div id="news-list">
+            </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>ホワチャ鯖</h3>
+                <p>© 2025 HowatyaSaba All Rights Reserved.</p>
+            </div>
+            <div class="social-links">
+    <a href="https://discord.gg/jdkmm4gRnS" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://x.com/howatyasaba" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+    <a href="https://minecraft.jp/servers/62a07b9c26efa305ac000003" target="_blank" rel="noopener noreferrer">Japan Minecraft Servers</a>
+</div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

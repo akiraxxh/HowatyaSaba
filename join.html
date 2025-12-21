@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参加方法 - ホワチャ鯖</title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for tab visibility */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; opacity: 1; transition: opacity 0.5s; }
+        
+        /* Step numbering style */
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .step-container {
+            margin-bottom: 5rem;
+        }
+
+        .step-image {
+            width: 100%;
+            height: auto;
+            border: 1px solid #333;
+            margin: 1.5rem 0;
+            display: block;
+        }
+
+        .info-section {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-left: 5px solid var(--primary-color);
+            margin-top: 4rem;
+        }
+
+        /* Responsive image loading */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <div class="loader-bar"></div>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">ホワチャ鯖</a>
+            
+            <button class="menu-toggle" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="join.html">参加方法</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="rules.html">ルール</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="section-title">サーバーへの参加方法</h2>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="java-edition">JAVA EDITION</button>
+                <button class="tab-btn" data-tab="be-edition">BEDROCK EDITION</button>
+            </div>
+
+            <div id="java-edition" class="tab-content active">
+                <div class="step-container">
+                    <span class="step-number">01</span>
+                    <h3>ステップ1: Minecraftランチャーを起動</h3>
+                    <p>正規版のMinecraft Java Editionのランチャーを起動してください。メインメニューが表示されます。</p>
+                    <img src="java-step1.jpg" alt="Java Edition Step 01" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">02</span>
+                    <h3>ステップ2: マルチプレイを選択</h3>
+                    <p>メインメニューから「マルチプレイ」ボタンをクリックしてください。LAN内のゲーム検索が開始されます。</p>
+                    <img src="java-step2.jpg" alt="Java Edition Step 02" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">03</span>
+                    <h3>ステップ3: サーバーを追加</h3>
+                    <p>画面下部の「サーバーを追加」ボタンをクリックして、新しいサーバーを登録します。</p>
+                    <img src="java-step3.jpg" alt="Java Edition Step 03" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">04</span>
+                    <h3>ステップ4: サーバー情報を入力</h3>
+                    <p>サーバー名に「ホワチャ鯖」、サーバーアドレスに「howatya.playit.plus」を入力して「完了」をクリックしてください。</p>
+                    <img src="java-step4.jpg" alt="Java Edition Step 04" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">05</span>
+                    <h3>ステップ5: サーバーに接続</h3>
+                    <p>登録したサーバー「ホワチャ鯖」を選択し、「サーバーに接続」ボタンをクリックしてゲームを開始してください。接続が完了すると、サーバーにログインされます。</p>
+                    <img src="java-step5.jpg" alt="Java Edition Step 05" class="step-image" loading="lazy">
+                </div>
+            </div>
+
+            <div id="be-edition" class="tab-content">
+                <div class="step-container">
+                    <span class="step-number">01</span>
+                    <h3>ステップ1: Minecraftを起動</h3>
+                    <p>Minecraft統合版（BE版）を起動してください。メインメニューが表示されます。</p>
+                    <img src="be-step1.jpg" alt="Bedrock Edition Step 01" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">02</span>
+                    <h3>ステップ2: プレイを選択</h3>
+                    <p>メインメニューから「プレイ」ボタンをタップまたはクリックしてください。</p>
+                    <img src="be-step2.jpg" alt="Bedrock Edition Step 02" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">03</span>
+                    <h3>ステップ3: サーバータブを選択</h3>
+                    <p>上部のタブから「サーバー」を選択してください。注目のサーバー一覧が表示されます。</p>
+                    <img src="be-step3.jpg" alt="Bedrock Edition Step 03" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">04</span>
+                    <h3>ステップ4: サーバーを追加</h3>
+                    <p>「サーバーを追加」をタップし、以下の情報を入力してください。入力後、「サーバーを追加」または「追加してプレイ」をタップしてください。</p>
+                    <div class="info-card">
+                        <p><strong>サーバー名:</strong> ホワチャ鯖</p>
+                        <p><strong>サーバーアドレス:</strong> be-howatya.playit.plus</p>
+                        <p><strong>ポート:</strong> 9000</p>
+                    </div>
+                    <img src="be-step4.jpg" alt="Bedrock Edition Step 04" class="step-image" loading="lazy">
+                </div>
+
+                <div class="step-container">
+                    <span class="step-number">05</span>
+                    <h3>ステップ5: サーバーに接続</h3>
+                    <p>登録したサーバー「ホワチャ鯖」が表示されます。サーバーをタップして接続してください。ゲームをお楽しみください。</p>
+                    <img src="be-step5.jpg" alt="Bedrock Edition Step 05" class="step-image" loading="lazy">
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>サーバー接続情報</h3>
+                <p><strong>Java版サーバーアドレス:</strong> howatya.playit.plus</p>
+                <p><strong>BE版（統合版）サーバーアドレス:</strong> be-howatya.playit.plus</p>
+                <p><strong>ポート:</strong> 9000</p>
+                <p style="margin-top: 1rem; color: var(--text-gray);">※接続できない場合は、Discordでサポートを受けることができます</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>ホワチャ鯖</h3>
+                <p>© 2025 ホワチャ鯖 All Rights Reserved.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://discord.gg/jdkmm4gRnS" target="_blank" rel="noopener noreferrer">Discord</a>
+                <a href="https://x.com/howatyasaba" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                <a href="https://minecraft.jp/servers/62a07b9c26efa305ac000003" target="_blank" rel="noopener noreferrer">Japan Minecraft Servers</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tab switching logic for join page
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTabId = button.getAttribute('data-tab');
+
+                // Remove active classes
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                    content.style.opacity = '0';
+                });
+
+                // Set new active classes
+                button.classList.add('active');
+                const activeContent = document.getElementById(targetTabId);
+                activeContent.classList.add('active');
+                
+                // Fade-in animation
+                setTimeout(() => {
+                    activeContent.style.opacity = '1';
+                }, 10);
+            });
+        });
+    </script>
+</body>
+</html>
